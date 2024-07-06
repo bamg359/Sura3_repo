@@ -29,21 +29,24 @@ class User:
         self._employee_id = employee_id
 
     employees = []
+    costumers = {}
 
-    def create_user(self, employees):
-        #employee = []
+    def create_user(self):
+        # employee = []
         self._employee_id = input("Id Empleado")
-        #employee.append(self._employee_id)
+        # employee.append(self._employee_id)
         self._name_employee = input("Nombre empleado")
-        #employee.append(self._name_employee)
+        # employee.append(self._name_employee)
         self._last_name_employee = input("Apellido empleado")
-        #employee.append(self._last_name_employee)
+        # employee.append(self._last_name_employee)
         self._email = input("Email")
-        #employee.append(self._email)
+        # employee.append(self._email)
         self._password = input("Contraseña")
-        #employee.append(self._password)
-        #employees.append(employee)
+        # employee.append(self._password)
+        # employees.append(employee)
 
-    def list_employee_data(self, employees):
-        for item in employees:
+
+
+    def list_employee_data(self):
+        for item in self.employees:
             print(item)

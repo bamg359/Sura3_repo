@@ -27,9 +27,9 @@ class Employee(User):
 
     #employees = []
 
-    def create_user(self, employees):
+    def create_user(self):
         #employee = []
-        super().create_user(employees)
+        super().create_user()
         self._rol = input("Rol")
         #employee.append(self._rol)
         self._salary = input("Salario")
@@ -39,6 +39,6 @@ class Employee(User):
 
         #User.employees.append(employee)
 
-    def list_employee_data(self, employees):
-        for item in employees:
+    def list_employee_data(self):
+        for item in self.employees:
             print(item)
