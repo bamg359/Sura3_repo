@@ -16,3 +16,8 @@ print(my_dict.keys())
 my_dict.update({"salary":1500000})
 
 print(my_dict)
+
+
+name = input("nombre").lower()
+
+print(name)
