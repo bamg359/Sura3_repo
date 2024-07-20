@@ -32,12 +32,15 @@ class Costumer(User):
     db.connect()
 
 
-    def create_costumer(self):
-        self._user_id = int(input("Ingrese el id del clinte"))
+    def create_user(self, db):
+        super().create_user()
+        self._type = int(input("Ingrese: \n 1. persona natural \n 2. Persona Juridica"))
+        self._points = int(input("ingrese los puntos iniciales"))
+        self.costumer_insert(db)
 
 
     def costumer_insert(self, db):
-        query = "INSERT INTO costumer (costumer_id , costumer_name , costumer_last_name, email , cost_password, costumer_type,points) VALUES(%s, %s, %s, %s, %s , %s,%s)"
+        query = "INSERT INTO costumers (costumer_id , costumer_name , costumer_last_name, email , cost_password, costumer_type,points) VALUES(%s, %s, %s, %s, %s , %s,%s)"
         values = (self._user_id, self._name_user, self._last_name_user, self._email, self._password, self._type, self._points)
         db.execute_query(query, values)
 

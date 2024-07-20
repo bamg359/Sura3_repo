@@ -14,7 +14,7 @@ class Conexion:
         self.database = database
         self.connection = None
 
-    _instance = None
+    #_instance = None
 
     def connect(self):
         try:
@@ -46,7 +46,7 @@ class Conexion:
                 result = cursor.fetchall()
                 return result
         except mysql.connector.Error as err:
-            print("Error al ejecutar la consulta")
+            print("Error al ejecutar la consulta", err)
             return None
         finally:
             cursor.close()

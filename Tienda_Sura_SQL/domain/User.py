@@ -30,6 +30,11 @@ class User:
         self._user_id = user_id
 
 
-
+    def create_user(self):
+        self._user_id = int(input("Ingrese el id del usuario"))
+        self._name_user = input("Ingrese el nombre del usuario")
+        self._last_name_user = input("Ingrese el apellido del usuario")
+        self._email = input("Ingrese el correo del usuario")
+        self._password = input("Ingrese la contraseña")
 
 
