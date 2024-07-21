@@ -26,7 +26,7 @@ class Person_Type:
     def type(self, type):
         self._type = type
 
-    db = Conexion(host='localhost', port=3306, user='root', password="", database='tienda_sura_g3')
+    db = Conexion(host='localhost', port=3307, user='root', password="", database='tienda_sura_g3')
     db.connect()
 
 
