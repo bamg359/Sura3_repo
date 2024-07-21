@@ -43,7 +43,7 @@ class Rol:
         if result:
             rols = []
             for row in result:
-                rol = Rol.from_row(row)
+                rol = Rol.from_row_rol(row)
                 rols.append(rol)
                 #return rols
                 print(row[0], row[1])

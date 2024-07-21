@@ -12,12 +12,8 @@ class ViewSystem:
 
 
 
-
     costumer_manager = View_Costumer()
     employee_manager = View_Employee()
-
-
-
 
 
     def system_init(self):
