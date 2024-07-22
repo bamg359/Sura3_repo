@@ -101,13 +101,25 @@ class Product:
         self._price = self._cost/(1- (self._profit/100))
         self._quantity = int(input("Ingrese la cantidad de producto"))
         print("Seleccione 1 para dejar el estado del producto como disponible , 0 para no disponible")
-        self._state = lambda select, active ="Disponible", inactive ="No Disponible": active if select == 1 else inactive
+        self._state = self.create_state()
         self.product_insert(db)
 
     def product_insert(self, db):
         query = "INSERT INTO product (product_id , product_name , description, category, cost , profit, price, quantity  , state) VALUES(%s,%s,%s, %s, %s, %s, %s , %s,%s)"
         values = (self._product_id, self._product_name, self._description, self._category, self._cost, self._profit, self._price, self._quantity, self._state)
         db.execute_query(query, values)
+
+
+    def create_state(self):
+        select = int(input("Selecciona 1 Para activo , 0 para inactivo"))
+        active="Disponible"
+        inactive="No Disponible"
+
+        if select == 1:
+            return active
+        else:
+            return inactive
+
 
 
 
