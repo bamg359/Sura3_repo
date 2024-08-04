@@ -118,7 +118,30 @@ class Product:
         if select == 1:
             return active
         else:
-            return inactive
+            return
+
+
+    def select_product(self, db):
+        query = "SELECT * FROM product"
+        result = db.execute_query(query)
+        if result:
+            products = []
+            for row in result:
+                product = Product.from_row(row)
+                products.append(product)
+                print(row[0], row[1])
+            return products
+        else:
+            print("Productos no encontrados")
+            return []
+
+
+    def update_costumer(self, db):
+        query = "UPDATE product SET product_id = % , product_name = % , description = %, category = %, cost = % , profit = %, price = %s, quantity = %s  , state =%s WHERE product_id =%s"
+        values = (self._product_id, self._product_name, self._description, self._category, self._cost, self._profit, self._price, self._quantity, self._state)
+        db.execute_query(query, values)
+
+
 
 
 
